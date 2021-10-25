@@ -20,7 +20,7 @@ function Banner() {
         fetchData();
     }, [])
 
-    console.log(movie);
+    // console.log(movie);
     function truncate(string, n) {
         return string?.length > n ? string.substr(0, n - 1) + '...' : string;
     }
@@ -35,14 +35,12 @@ function Banner() {
             }}
         >
             <div className="banner_contents">
-                <h1 className="banner_title">Movie Name</h1>
+                <h1 className="banner_title">{movie?.title || movie?.name || movie?.orignals}</h1>
                 <div className="banner_buttons">
                     <button className="banner_button">Play</button>
                     <button className="banner_button">My List</button>
                 </div>
-                <h1 className="banner_desc"> {truncate(`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lorem ac neque
-                tristique egestas. Nunc semper vitae nibh et varius. Fusce odio eros, consectetur vitae ullamcorper sit amet, efficitur
-                a neque.`, 150)}
+                <h1 className="banner_desc"> {truncate(movie?.overview, 150)}
                 </h1>
             </div>
 
