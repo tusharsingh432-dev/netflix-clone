@@ -16,12 +16,12 @@ function LoginScreen() {
 
                 <div className="loginscreen_gradient"></div>
             </div>
+            <div className="loginscreen_body">
+                {signup ? (
+                    <SignupScreen />
+                ) : (
+                    <>
 
-            {signup ? (
-                <SignupScreen />
-            ) : (
-                <>
-                    <div className="loginscreen_body">
                         <h1>Unlimited films, TV programmes and More</h1>
                         <h2>Watch anywhere. Cancel anytime</h2>
                         <h3>Ready to watch? Enter your email to
@@ -34,10 +34,11 @@ function LoginScreen() {
                                 <button className="loginscreen_getstarted" onClick={() => setSignup(true)} >GET STARTED</button>
                             </form>
                         </div>
-                    </div >
-                </>
-            )
-            }
+
+                    </>
+                )
+                }
+            </div >
         </div >
     )
 }
